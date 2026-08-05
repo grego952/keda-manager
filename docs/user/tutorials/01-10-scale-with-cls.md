@@ -348,7 +348,6 @@ The `QUEUE_DEPTH` value is set by an init container at Pod startup. To change th
 The Kyma Telemetry module scrapes Prometheus metrics from annotated Services and forwards them to your CLS instance. The demo application manifest already includes the Prometheus scraping annotations.
 
 1. Create a MetricPipeline resource that sends the scraped metrics to CLS using the OTLP credentials from the binding Secret:
-
     ```bash
     kubectl apply -f - <<EOF
     apiVersion: telemetry.kyma-project.io/v1beta1
@@ -393,13 +392,11 @@ The Kyma Telemetry module scrapes Prometheus metrics from annotated Services and
     ```
 
 2. Verify that the pipeline is ready:
-
     ```bash
     kubectl get metricpipeline cls-metric-pipeline
     ```
 
     You should get a result similar to this example:
-
     ```bash
     NAME                  CONFIGURATION GENERATED   GATEWAY HEALTHY   AGENT HEALTHY   FLOW HEALTHY   AGE
     cls-metric-pipeline   True                      True              True            True           2m
